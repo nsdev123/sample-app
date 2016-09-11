@@ -13,15 +13,17 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
+	<!-- 
 	<repositories>
         <repository>
             <id>JBoss Repository</id>
             <url>https://repository.jboss.org/nexus/content/groups/public/</url>
         </repository>
     </repositories>
- 
+	
     <dependencyManagement>
         <dependencies>
+
             <dependency>
                 <groupId>org.jboss.spec</groupId>
                 <artifactId>jboss-javaee-7.0</artifactId>
@@ -32,6 +34,7 @@
               
         </dependencies>
     </dependencyManagement>
+	-->
 	<dependencies>
 		<!--  
 		<dependency>
