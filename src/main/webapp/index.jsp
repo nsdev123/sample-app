@@ -11,9 +11,9 @@
 	<ul>
 	<jsp:useBean id="accountNumbers" class="com.openshift.aeg.AccountNumberGenerator" scope="request">
 	Account numbers :
-     <c-rt:forEach var="acNumber" items="{accountNumbers}">
+     <c:forEach var="acNumber" items="{accountNumbers}">
         <li><c:out value="${acNumber}" />
-     </c-rt:forEach>    
+     </c:forEach>    
 	</jsp:useBean>
 	</ul>
 </body>
