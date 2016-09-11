@@ -13,7 +13,7 @@
      <c:forEach var="acNumber" items="${accountNumbers}">
         <li><c:out value="${acNumber}" />
      </c:forEach>    
-	</jsp:useBean>
+	
 	</ul>
 </body>
 </html>
