@@ -1,6 +1,13 @@
 package com.openshift.aeg;
 
-public class AccountNumberGenerator {
+import java.io.Serializable;
+
+public class AccountNumberGenerator implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	{
 		accountNumbers= new String[]{"werwe", "fsdfsf"};
 	}
@@ -9,6 +16,10 @@ public class AccountNumberGenerator {
 	
 	public String[] getAccountNumbers() {
 		return accountNumbers;
+	}
+
+	public void setAccountNumbers(String[] accountNumbers) {
+		this.accountNumbers = accountNumbers;
 	}
 	
 }

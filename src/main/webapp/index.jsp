@@ -10,7 +10,8 @@
 <body>
 	<ul>
 	Account numbers :
-     <c:forEach var="acNumber" items="${accountNumbers}">
+     <jsp:useBean id="accountNumbers" class="com.openshift.aeg.AccountNumberGenerator" scope="session"/>
+     <c:forEach items="${accountNumbers}" var="acNumber">
         <li><c:out value="${acNumber}" />
      </c:forEach>    
 	
