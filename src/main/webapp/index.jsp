@@ -9,7 +9,6 @@
 </head>
 <body>
 	<ul>
-	<jsp:useBean id="accountNumbers" class="com.openshift.aeg.AccountNumberGenerator" scope="request">
 	Account numbers :
      <c:forEach var="acNumber" items="{accountNumbers}">
         <li><c:out value="${acNumber}" />
