@@ -9,7 +9,7 @@ public class AccountNumberGenerator implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	{
-		accountNumbers= new String[]{"werwe", "fsdfsf"};
+		accountNumbers= new String[]{"AAA-3254234234", "BBB-2434597938"};
 	}
 	
 	private String[] accountNumbers;
