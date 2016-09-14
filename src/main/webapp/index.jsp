@@ -8,13 +8,15 @@
 <title>Account Number Generator</title>
 </head>
 <body>
+	<h2>Account numbers</h2>
 	<ul>
-	Account numbers :
-     <jsp:useBean id="accountNumberGenerator" class="com.openshift.aeg.AccountNumberGenerator" scope="session"/>
-     <c:forEach items="${accountNumberGenerator.accountNumbers}" var="current">
-        <li><c:out value="${current}" />
-     </c:forEach>    
-	
+		<jsp:useBean id="accountNumberGenerator"
+			class="com.openshift.aeg.AccountNumberGenerator" scope="session" />
+		<c:forEach items="${accountNumberGenerator.accountNumbers}"
+			var="current">
+			<li><c:out value="${current}" /></li>
+		</c:forEach>
+
 	</ul>
 </body>
 </html>
