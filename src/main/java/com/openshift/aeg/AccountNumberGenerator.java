@@ -2,6 +2,7 @@ package com.openshift.aeg;
 
 import java.io.Serializable;
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class AccountNumberGenerator implements Serializable{
 	/**
@@ -16,7 +17,7 @@ public class AccountNumberGenerator implements Serializable{
 	}
 	
 	private String[] accountNumbers;
-	private String[] accountPrefixes = {"AAA","BBB","CCC","DDD"};
+	
 	
 	public String[] getAccountNumbers() {
 		return accountNumbers;
@@ -27,10 +28,18 @@ public class AccountNumberGenerator implements Serializable{
 	}
 	
 	public String[] generateAccountNumbers() {
-		String[] newAccountNumbers = new String[MAX_ACCOUNT_NUMBERS];
+		String[] accountPrefixes = {"AAA","BBB","CCC","DDD"};
+		accountNumbers = new String[MAX_ACCOUNT_NUMBERS];
 		for (int i=0; i<MAX_ACCOUNT_NUMBERS; i++) {
-			newAccountNumbers[i] = accountPrefixes[new Random().nextInt(accountPrefixes.length)];
+			String accountNumberPrefix = accountPrefixes[new Random().nextInt(accountPrefixes.length)];
+			int accountNumberSuffix = 1000000 + new Random().nextInt(9000000); 
+			accountNumbers[i] = new String(accountNumberPrefix + "-" + accountNumberSuffix);
 		}
-		return newAccountNumbers;
+		return accountNumbers;
+	}
+	
+	public static void main(String[] args) {
+		AccountNumberGenerator x = new AccountNumberGenerator();
+		x.getAccountNumbers();
 	}
 }
