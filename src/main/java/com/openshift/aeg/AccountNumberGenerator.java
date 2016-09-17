@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class AccountNumberGenerator implements Serializable{
 	/**
@@ -14,6 +16,7 @@ public class AccountNumberGenerator implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	private final int MAX_ACCOUNT_NUMBERS = 5;
+	private static final Logger LOGGER = Logger.getLogger( "AccountNumberGenerator" );
 
 	{
 		accountNumbers= generateAccountNumbers();
@@ -42,6 +45,7 @@ public class AccountNumberGenerator implements Serializable{
 //	}
 	
 	public String[] generateAccountNumbers() {
+		LOGGER.log(Level.INFO, "Entering generateAccountNumbers()...");
 		ArrayList<String> list = new ArrayList<String>();
 		try {
 				String databaseURL = "jdbc:postgresql://";
@@ -59,8 +63,10 @@ public class AccountNumberGenerator implements Serializable{
 					}
 					rs.close();
 					connection.close();
-				}
+				} else
+					LOGGER.log(Level.SEVERE, "Could not connect to the database.");
 		} catch (Exception e) {
+			LOGGER.log(Level.SEVERE, e.toString(), e);
 			System.out.println("Database connection problem!");
 		}
 		return list.toArray(new String[list.size()]);	  
