@@ -25,7 +25,7 @@ public class DBAccountNumberGenerator extends AccountNumberGenerator {
 			String password = System.getenv("PGPASSWORD");
 			Connection connection = DriverManager.getConnection(databaseURL, username, password);
 			if (connection != null) {
-				String SQL = "select a.ac_number as account_number from account_number a";
+				String SQL = "select a.ac_number as account_number from account a";
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery(SQL);
 				while (rs.next()) {
