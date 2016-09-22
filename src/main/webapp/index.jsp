@@ -11,7 +11,7 @@
 	<h2>Account numbers</h2>
 	<ul>
 		<jsp:useBean id="accountNumberGenerator"
-			class="com.openshift.aeg.DBAccountNumberGenerator" scope="page" />
+			class="com.openshift.aeg.AccountNumberGenerator" scope="page" />
 		<c:forEach items="${accountNumberGenerator.accountNumbers}"
 			var="current">
 			<li><c:out value="${current}" /></li>
